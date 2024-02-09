@@ -6,6 +6,7 @@ module fulladder4(
     output logic [3:0] sum_o,
     output logic carry_o  
 );
+
 logic intermediate_signal_0;
 logic intermediate_signal_1;
 logic intermediate_signal_2;
@@ -57,4 +58,5 @@ fulladder fulladder3(
    
    .sum_o(sum_o[3])
 );
+
 endmodule

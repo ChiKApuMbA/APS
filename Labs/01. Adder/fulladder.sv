@@ -18,4 +18,4 @@ module fulladder(
 
     assign carry_o = A | b_AND_carry;
 
-end module
+endmodule

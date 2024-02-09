@@ -6,13 +6,13 @@ module fulladder(
      output sum_o,
      output carry_o
 );
-    assign a_XOR_b = a ^ b;
+    assign a_XOR_b = a_i ^ b_i;
     assign a_AND_carry = a & carry_i;
 
     assign sum_o = a_XOR_b ^ carry_i;
-    assign a_AND_b = a & b;
+    assign a_AND_b = a_i & b_i;
 
-    assign b_AND_carry = b & carry_i;
+    assign b_AND_carry = b_i & carry_i;
 
     assign A = a_AND_b | a_AND_carry;
 

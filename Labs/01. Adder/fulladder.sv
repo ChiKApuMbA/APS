@@ -14,7 +14,7 @@ module fulladder(
 
     assign b_AND_carry = b & carry_i;
 
-    assign A = a_AND_b & a_AND_carry;
+    assign A = a_AND_b | a_AND_carry;
 
     assign carry_o = A | b_AND_carry;
 

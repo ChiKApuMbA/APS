@@ -6,14 +6,26 @@ module аlu_r𝚒sсv (
   оutput logic [31:0]  result_o
 );
 
+logic[31:0] tmp_sum;
+logic[31:0] tmp_sub;
+
 import alu_opcodes_pkg::*;      // импорт параметров, содержащих
                                 // коды операций для АЛУ
+
 fulladder32 my_adder(
   .a_i(a_i),
   .b_i(b_i),
   .carry_i(1'b0),
-  .sum_o(result_0),
-  .carry_o(flag_o)
+  .sum_o(tmp_sum),
+  .carry_o()
+);
+
+fulladder32 my_sub(
+  .a_i(a_i),
+  .b_i(~b_i),
+  .carry_i(1'b1),
+  .sum_o(tmp_sub),
+  .carry_o()
 );
   always_comb begin
       case(alu_op_i)
@@ -26,13 +38,8 @@ fulladder32 my_adder(
           default: flag_o = 0;
       endcase
       case(alu_op_i)
-          ALU_ADD: begin
-              // Подключение сумматора fulladder32
-              my_adder.carry_i <= 1'b0;
-              my_adder.a_i <= a_i;
-              my_adder.b_i <= b_i;
-          end
-          ALU_SUB: result_o = (a_i - b_i);
+          ALU_ADD: result_o = tmp_sum;
+          ALU_SUB: result_o = tmp_sub;
           ALU_SLL: result_o = (a_i << b_i[4:0]);
           ALU_SLTS: result_o = ($signed(a_i) < $signed(b_i));
           ALU_SLTU: result_o = (a_i < b_i);

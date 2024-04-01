@@ -1,17 +1,13 @@
-mоdulе instr_mеm(
-  inрut  logic [31:0] addr_i,
-  оutрut logic [31:0] rеаd_dаtа_o
+module instr_mem(
+  input  logic [31:0] addr_i,
+  output logic [31:0] read_data_o
 );
 
-    logic [31:0] mem [1023];
+    logic [31:0] ROM [1024];
     initial begin
-        $readmemh("programm.mem", ROM);
+        $readmemh("program.mem", ROM);
     end
 
-    logic [9:0] mem_addr;
-
-    assign mem_addr = addr_i[11:2] >> 2;
-
-    assign read_data_o = mem[mem_addr]; 
+    assign read_data_o = ROM[addr_i[11:2]]; 
 
 endmodule

@@ -229,8 +229,10 @@ module decoder_riscv (
             default: begin illegal_instr_o = 1'd1;gpr_we_o = 1'd0; end
           endcase
         end
-        
         default: begin illegal_instr_o = 1'd1;gpr_we_o = 1'd0; end
       endcase
-    end  
+    end
+    else begin 
+      illegal_instr_o = 1; 
+    end
 endmodule

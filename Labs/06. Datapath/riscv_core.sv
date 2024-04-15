@@ -9,7 +9,7 @@ module riscv_core (
 
   output logic [31:0] instr_addr_o,
   output logic [31:0] mem_addr_o,
-  output logic [2:0] mem_size_o,
+  output logic [2:0]  mem_size_o,
   output logic        mem_req_o,
   output logic        mem_we_o,
   output logic [31:0] mem_wd_o

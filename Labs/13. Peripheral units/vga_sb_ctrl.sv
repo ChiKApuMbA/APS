@@ -19,25 +19,31 @@ module vga_sb_ctrl (
   // Экземпляр vgachargen
   vgachargen vgachar_inst (
     .clk_i(clk_i),
-    .clk100m_i(clk100m_i),
     .rst_i(rst_i),
-    .char_map_addr_i(addr_i[11:2]),
-    .char_map_be_i(mem_be_i),
-    .char_map_wdata_i(write_data_i),
-    .char_map_rdata_o(read_data_o),
-    .col_map_addr_i(addr_i[11:2]),
-    .col_map_be_i(mem_be_i),
-    .col_map_wdata_i(write_data_i),
-    .col_map_rdata_o(read_data_o),
-    .char_tiff_addr_i(addr_i[11:2]),
-    .char_tiff_be_i(mem_be_i),
-    .char_tiff_wdata_i(write_data_i),
-    .char_tiff_rdata_o(read_data_o),
+    .clk100m_i(clk100m_i),
     .vga_r_o(vga_r_o),
     .vga_g_o(vga_g_o),
     .vga_b_o(vga_b_o),
     .vga_hs_o(vga_hs_o),
     .vga_vs_o(vga_vs_o)
+    
+    .char_map_wdata_i(write_data_i),
+    .col_map_wdata_i(write_data_i),
+    .char_tiff_wdata_i(write_data_i),
+    
+    
+    .char_map_addr_i(addr_i[11:2]),
+    .col_map_addr_i(addr_i[11:2]),
+    .char_tiff_addr_i(addr_i[11:2]),
+
+    .char_map_be_i(mem_be_i),
+    .col_map_be_i(mem_be_i),
+    .char_tiff_be_i(mem_be_i),
+    
+    
+    .char_map_rdata_o(read_data_o),
+    .col_map_rdata_o(read_data_o),
+    .char_tiff_rdata_o(read_data_o),
   );
 
   // Мультиплексирование сигналов write_enable_i

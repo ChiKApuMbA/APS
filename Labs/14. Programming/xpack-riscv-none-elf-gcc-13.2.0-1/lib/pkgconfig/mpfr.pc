@@ -1,0 +1,11 @@
+prefix=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install
+exec_prefix=${prefix}
+libdir=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install/lib
+includedir=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install/include
+
+Name: mpfr
+URL: https://www.mpfr.org/
+Description: C library for multiple-precision floating-point computations
+Version: 4.2.0
+Libs: -L${libdir} -lmpfr -lgmp
+Cflags: -I${includedir}

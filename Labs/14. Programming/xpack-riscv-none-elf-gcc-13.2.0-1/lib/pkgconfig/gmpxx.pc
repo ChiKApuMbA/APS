@@ -1,0 +1,12 @@
+prefix=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install
+exec_prefix=${prefix}
+includedir=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install/include
+libdir=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install/lib
+
+Name: GNU MP C++
+Description: GNU Multiple Precision Arithmetic Library (C++ bindings)
+URL: https://gmplib.org
+Version: 6.3.0
+Requires: gmp
+Cflags: -I${includedir}
+Libs: -L${libdir} -lgmpxx

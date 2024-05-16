@@ -1,0 +1,19 @@
+#
+# Author: Lasse Collin
+#
+# This file has been put into the public domain.
+# You can do whatever you want with this file.
+#
+
+prefix=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install
+exec_prefix=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install
+libdir=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install/lib
+includedir=/__w/riscv-none-elf-gcc-xpack/riscv-none-elf-gcc-xpack/build/win32-x64/x86_64-pc-linux-gnu/install/include
+
+Name: liblzma
+Description: General purpose data compression library
+URL: https://tukaani.org/xz/
+Version: 5.4.4
+Cflags: -I${includedir}
+Libs: -L${libdir} -llzma
+Libs.private: -pthread -lpthread
